@@ -1,0 +1,12 @@
+GET http://localhost:300/todos/
+###
+
+GET http://localhost:300/todos/:todoId/
+
+POST http://localhost:300/todos/
+###
+
+PUT http://localhost:300/todos/:todoId/
+
+DELETE http://localhost:300/todos/:todoId/
+
