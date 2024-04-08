@@ -4,6 +4,7 @@ const path = require('path')
 const {open} = require('sqlite')
 const sqlite3 = require('sqlite3')
 const app = express()
+app.use(express.json())
 
 const dbPath = path.join(__dirname, 'todoApplication.db')
 
@@ -43,7 +44,7 @@ const hasStatusProperty = requestQuery => {
 app.get('/todos/', async (request, response) => {
   let data = null
   let getTodosQuery = ''
-  const {search_q, priority, status} = request.query
+  const {search_q='', priority, status} = request.query
 
   switch (true) {
     case hasPriorityAndStatusProp(request.query):
